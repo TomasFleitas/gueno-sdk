@@ -141,7 +141,7 @@ export class WebEvents {
           ...this.gatheredData,
           timeOnApp: endAt.getTime() - this.initAt.getTime(),
           'session-id': this.webSession.getSessionId(),
-          'secret-key': clientKey,
+          'client-key': clientKey,
         }),
       );
     });
@@ -262,7 +262,7 @@ export class WebEvents {
       headers: {
         'Content-Type': 'application/json',
         'session-id': this.webSession.getSessionId(),
-        'secret-key': clientKey,
+        'client-key': clientKey,
       },
       body: JSON.stringify({ eventType, ...this.gatheredData }),
     }).catch(console.error);
