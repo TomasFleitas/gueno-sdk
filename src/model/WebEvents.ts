@@ -1,6 +1,8 @@
 import {
   BACKEND_URL,
+  CLIENT_KEY,
   SEND_SNAPSHOT_TIME_SECONDS,
+  SESSION_ID,
   TRIGGER_ON_EVENTS,
 } from '../utils';
 import { WebAuthentication } from './WebAuthentication';
@@ -140,8 +142,8 @@ export class WebEvents {
         JSON.stringify({
           ...this.gatheredData,
           timeOnApp: endAt.getTime() - this.initAt.getTime(),
-          'session-id': this.webSession.getSessionId(),
-          'client-key': clientKey,
+          [SESSION_ID]: this.webSession.getSessionId(),
+          [CLIENT_KEY]: clientKey,
         }),
       );
     });
@@ -261,8 +263,8 @@ export class WebEvents {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'session-id': this.webSession.getSessionId(),
-        'client-key': clientKey,
+        [SESSION_ID]: this.webSession.getSessionId(),
+        [CLIENT_KEY]: clientKey,
       },
       body: JSON.stringify({ eventType, ...this.gatheredData }),
     }).catch(console.error);
