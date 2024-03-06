@@ -127,7 +127,7 @@ export class WebEvents {
     }
     this.eventsStarted.timeOnApp = true;
     window.addEventListener('beforeunload', () => {
-      const clientKey = this.webAuthentication.getSecretKey();
+      const clientKey = this.webAuthentication.getClientKey();
 
       if (!clientKey) {
         console.error('Secret Key no provided');
@@ -250,10 +250,10 @@ export class WebEvents {
   }
 
   private sendShanpshot(eventType: TEvents) {
-    const clientKey = this.webAuthentication.getSecretKey();
+    const clientKey = this.webAuthentication.getClientKey();
 
     if (!clientKey) {
-      console.error('Secret Key no provided');
+      console.error('Client Key no provided');
       return;
     }
 

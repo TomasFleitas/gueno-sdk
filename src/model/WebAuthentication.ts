@@ -11,11 +11,11 @@ export class WebAuthentication {
     return WebAuthentication.instance;
   }
 
-  public setSecretKey(clientKey: string) {
+  public setClientKey(clientKey: string) {
     this.clientKey = clientKey;
   }
 
-  public getSecretKey() {
+  public getClientKey() {
     return this.clientKey;
   }
 }
