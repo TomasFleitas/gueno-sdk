@@ -127,9 +127,9 @@ export class WebEvents {
     }
     this.eventsStarted.timeOnApp = true;
     window.addEventListener('beforeunload', () => {
-      const secretKey = this.webAuthentication.getSecretKey();
+      const clientKey = this.webAuthentication.getSecretKey();
 
-      if (!secretKey) {
+      if (!clientKey) {
         console.error('Secret Key no provided');
         return;
       }
@@ -141,7 +141,7 @@ export class WebEvents {
           ...this.gatheredData,
           timeOnApp: endAt.getTime() - this.initAt.getTime(),
           'session-id': this.webSession.getSessionId(),
-          'secret-key': secretKey,
+          'secret-key': clientKey,
         }),
       );
     });
@@ -250,9 +250,9 @@ export class WebEvents {
   }
 
   private sendShanpshot(eventType: TEvents) {
-    const secretKey = this.webAuthentication.getSecretKey();
+    const clientKey = this.webAuthentication.getSecretKey();
 
-    if (!secretKey) {
+    if (!clientKey) {
       console.error('Secret Key no provided');
       return;
     }
@@ -262,7 +262,7 @@ export class WebEvents {
       headers: {
         'Content-Type': 'application/json',
         'session-id': this.webSession.getSessionId(),
-        'secret-key': secretKey,
+        'secret-key': clientKey,
       },
       body: JSON.stringify({ eventType, ...this.gatheredData }),
     }).catch(console.error);

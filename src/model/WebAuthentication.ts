@@ -1,6 +1,6 @@
 export class WebAuthentication {
   private static instance: WebAuthentication;
-  private secretKey: string;
+  private clientKey: string;
 
   private constructor() {}
 
@@ -11,11 +11,11 @@ export class WebAuthentication {
     return WebAuthentication.instance;
   }
 
-  public setSecretKey(secretKey: string) {
-    this.secretKey = secretKey;
+  public setSecretKey(clientKey: string) {
+    this.clientKey = clientKey;
   }
 
   public getSecretKey() {
-    return this.secretKey;
+    return this.clientKey;
   }
 }

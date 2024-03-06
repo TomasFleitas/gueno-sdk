@@ -28,5 +28,5 @@ type TGatheredData = {
 type TEvents = 'Click' | 'Navigate' | 'Close' | 'Reload' | 'Timeout';
 
 type TInitGueno = {
-  secretKey: string;
+  clientKey: string;
 };

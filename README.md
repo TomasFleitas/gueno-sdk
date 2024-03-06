@@ -25,7 +25,7 @@ import { initGueno } from 'test-sdk-g';
 Luego, inicializa la biblioteca con tu clave secreta:
 
 ```javascript
-initGueno({ secretKey: 'secret' });
+initGueno({ clientKey: 'secret' });
 ```
 
 ### CDN
@@ -43,6 +43,6 @@ Después de incluir el script, puedes inicializar la biblioteca de la siguiente 
 
 ```javascript
 <script>
-  window["Gueno"].initGueno({ secretKey: "secret" });
+  window["Gueno"].initGueno({ clientKey: "secret" });
 </script>
 ```

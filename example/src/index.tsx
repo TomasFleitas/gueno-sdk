@@ -5,9 +5,9 @@ import './index.scss';
 /* import { initGueno } from 'test-sdk-g'; */
 import { initGueno } from 'test-sdk-g';
 
-/* window['Gueno'].initGueno({ secretKey: 'secret' }); */
+/* window['Gueno'].initGueno({ clientKey: 'secret' }); */
 
-initGueno({ secretKey: 'secret' });
+initGueno({ clientKey: 'secret' });
 
 const root = document.getElementById('root');
 
