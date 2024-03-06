@@ -7,6 +7,7 @@ export const initGueno = ({ clientKey }: TInitGueno) => {
   webAuthentication.setClientKey(clientKey);
 };
 
+// The idea of this autocalleable function is add more logic or another things encapsulating the scope
 (() => {
   const webEvents = WebEvents.getInstance();
   // init events
