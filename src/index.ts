@@ -4,7 +4,7 @@ import { WebAuthentication } from './model/WebAuthentication';
 const webAuthentication = WebAuthentication.getInstance();
 
 export const initGueno = ({ clientKey }: TInitGueno) => {
-  webAuthentication.setSecretKey(clientKey);
+  webAuthentication.setClientKey(clientKey);
 };
 
 (() => {
