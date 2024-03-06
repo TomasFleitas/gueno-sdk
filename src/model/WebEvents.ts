@@ -132,7 +132,7 @@ export class WebEvents {
       const clientKey = this.webAuthentication.getClientKey();
 
       if (!clientKey) {
-        console.error('Secret Key no provided');
+        console.error('Client Key no provided');
         return;
       }
 
